@@ -25,10 +25,38 @@ Collection of unrefined plots of mainly three segments of data, runs 1300-1450, 
 
 *Plots that demonstrate questionable correlation*
 
+1302-1326:
+<img src="https://github.com/EdgarMao/DavidStuartLab/blob/master/MilliQan_Temperature-HV_Plotting/Plots/1302-1326.png" width="50%" height="50%">
 
-*Plots that demonstrate no correlation*
+1357-1375:
+<img src="https://github.com/EdgarMao/DavidStuartLab/blob/master/MilliQan_Temperature-HV_Plotting/Plots/1357-1375.png" width="50%" height="50%">
+
+1376-1394:
+<img src="https://github.com/EdgarMao/DavidStuartLab/blob/master/MilliQan_Temperature-HV_Plotting/Plots/1376-1394.png" width="50%" height="50%">
+
+1450-1432:
+<img src="https://github.com/EdgarMao/DavidStuartLab/blob/master/MilliQan_Temperature-HV_Plotting/Plots/1450-1432.png" width="50%" height="50%">
+
+1856-1763:
+<img src="https://github.com/EdgarMao/DavidStuartLab/blob/master/MilliQan_Temperature-HV_Plotting/Plots/1856-1763.png" width="50%" height="50%">
+
+
+*Plots that demonstrate very little correlation*
+
+1726-1744:
+<img src="https://github.com/EdgarMao/DavidStuartLab/blob/master/MilliQan_Temperature-HV_Plotting/Plots/1726-1744.png" width="50%" height="50%">
+
+1745-1763:
+<img src="https://github.com/EdgarMao/DavidStuartLab/blob/master/MilliQan_Temperature-HV_Plotting/Plots/1745-1763.png" width="50%" height="50%">
+
+1950-1856:
+<img src="https://github.com/EdgarMao/DavidStuartLab/blob/master/MilliQan_Temperature-HV_Plotting/Plots/1950-1856.png" width="50%" height="50%">
+
 
 *Uninteresting plots*
+
+2704-2722:
+<img src="https://github.com/EdgarMao/DavidStuartLab/blob/master/MilliQan_Temperature-HV_Plotting/Plots/2704-2722.png" width="50%" height="50%">
 
 
 *General Observations*

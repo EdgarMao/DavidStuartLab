@@ -1,4 +1,4 @@
-#Plots
+# Plots
 
 Collection of unrefined plots of mainly three segments of data, runs 1300-1450, runs 1700-1950, and runs 2500-2800
 
@@ -60,4 +60,10 @@ Collection of unrefined plots of mainly three segments of data, runs 1300-1450, 
 
 
 **General Observations**
-Runs 2500-2800 provide useful insights on the correlation between HV data and temperature data due to the frequent variation in HV settings in these runs; since the other two segments (runs 1300-1450 and runs 1700-1950) have a rather consistent HV setting, those plots might not be as useful for identifying the correlation bewteen HV data and temperature data. However, the data in runs 1300-1450 and runs 1700-1950 seem to be presenting some useful information about other potential factors that may influence the temperature of the sensor's environment. For instance, 
+
+Runs 2500-2800 provide useful insights on the correlation between HV data and temperature data due to the frequent variation in HV settings in these runs; since the other two segments (runs 1300-1450 and runs 1700-1950) have a rather consistent HV setting, those plots might not be as useful for identifying the correlation bewteen HV data and temperature data. However, the data in runs 1300-1450 and runs 1700-1950 seem to be presenting some useful information about other potential factors that may influence the temperature of the sensor's environment by excluding the HV setting factor.
+
+Based on the limited data in runs 2500-2800, I made a rough calulation that the change of every 200V in HV setting would lead to an estimated change of 1 degree celcius in temperature of the environment (ratio 200:1). To make inferences further than a rough estimation, I need to work on the followings:
+
+- Obtain more refined plots of for more complete sets of data
+- Create scatter plots with linear (possibly higher order) fits to provide a statistically vaild estiamtion of the relationship between HV and temperature data

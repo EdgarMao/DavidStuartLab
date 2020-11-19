@@ -74,4 +74,4 @@ In order to start using this data to estimate dark photon counts in MilliQan run
 
 - Refine the plotting prorgam, obtain a statically valid fit of HV in relation to temperature
 - Obtain data on the prepulse of different runs and establish potential correlations
-- Plot dark count in realtioship to HV settings and/or temperature
+- Plot dark count in relationship to HV settings and/or temperature

@@ -66,4 +66,12 @@ Runs 2500-2800 provide useful insights on the correlation between HV data and te
 Based on the limited data in runs 2500-2800, I made a rough calulation that the change of every 200V in HV setting would lead to an estimated change of 1 degree celcius in temperature of the environment (ratio 200:1). To make inferences further than a rough estimation, I need to work on the followings:
 
 - Obtain more refined plots of for more complete sets of data
+- Get a better understanding of possible factors that may influence the temperature data, compare them with the plots at hand
 - Create scatter plots with linear (possibly higher order) fits to provide a statistically vaild estiamtion of the relationship between HV and temperature data
+
+
+In order to start using this data to estimate dark photon counts in MilliQan runs, my current plan is the following:
+
+- Refine the plotting prorgam, obtain a statically valid fit of HV in relation to temperature
+- Obtain data on the prepulse of different runs and establish potential correlations
+- Plot dark count in realtioship to HV settings and/or temperature

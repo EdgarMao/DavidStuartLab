@@ -1,6 +1,6 @@
 **Plots**
 
-Collection of unrefined plots of 15 random segments of data
+Collection of unrefined plots of mainly three segments of data, runs 1300-1450, runs 1700-1950, and runs 2500-2800
 
 *Plots that demonstrate clear correlation between HV and Temperature*
 

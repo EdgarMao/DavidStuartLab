@@ -2,15 +2,19 @@
 
 Collection of unrefined plots of 15 random segments of data
 
-*Plots that demonstrate clear correlation between HV and Temperature*:
+*Plots that demonstrate clear correlation between HV and Temperature*
 
+2597-2615:
 <img src="https://github.com/EdgarMao/DavidStuartLab/blob/master/MilliQan_Temperature-HV_Plotting/Plots/2597-2615.png" width="50%" height="50%">
-2597-2615
 
 
 
-*Plots that demonstrate questionable correlation*:
+
+*Plots that demonstrate questionable correlation*
 
 
 
-*Uninteresting plots*:
+*Uninteresting plots*
+
+
+*General Observations*

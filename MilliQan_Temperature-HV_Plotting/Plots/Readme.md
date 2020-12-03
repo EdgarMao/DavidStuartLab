@@ -59,7 +59,7 @@ Collection of unrefined plots of mainly three segments of data, runs 1300-1450, 
 <img src="https://github.com/EdgarMao/DavidStuartLab/blob/master/MilliQan_Temperature-HV_Plotting/Plots/2704-2722.png" width="50%" height="50%">
 
 
-**General Observations**
+**General Observations** (19 Nov 2020)
 
 Runs 2500-2800 provide useful insights on the correlation between HV data and temperature data due to the frequent variation in HV settings in these runs; since the other two segments (runs 1300-1450 and runs 1700-1950) have a rather consistent HV setting, those plots might not be as useful for identifying the correlation bewteen HV data and temperature data. However, the data in runs 1300-1450 and runs 1700-1950 seem to be presenting some useful information about other potential factors that may influence the temperature of the sensor's environment by excluding the HV setting factor.
 

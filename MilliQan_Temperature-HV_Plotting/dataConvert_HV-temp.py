@@ -31,7 +31,7 @@ def getHV():
     graph_range = 100
     htmltxt_line = str(rawhtml.readline())
     # enter the desired run number to move the cursor for readline to the spot
-    while '<TD><A HREF="Run2615/index.html">' not in htmltxt_line:
+    while '<TD><A HREF="Run2630/index.html">' not in htmltxt_line:
         htmltxt_line = str(rawhtml.readline())
     # This loop is able to find all the stuff around TD, now get only the high voltage out.
     for i in range(graph_range):
@@ -218,6 +218,9 @@ def gettemp():
         tempo = r.text[88:]
         dataset = tempo.split()
         temp_data.extend(dataset)
+        # Attempt to add "None" into raw dataset
+        for j in range(12):
+            temp_data.append(None)
     try:
         temp_data.remove("\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
     except ValueError:
@@ -232,10 +235,9 @@ def gettemp():
         pass
     # Sort out data
     # organize and create variables
-    # major change (should consider changing back): using the if statement to focus on a single change of high voltage
     for j in range(len(HV_startdate)):
         for i in range(int(len(temp_data) / 12)):
-            if (datetime.strptime(HV_startdate[j-1], '%Y-%m-%d %H:%M:%S')) >= datetime.strptime(temp_data[12 * i + 1], '%Y:%m:%d:%H:%M:%S') >= (datetime.strptime(HV_enddate[j-1], '%Y-%m-%d %H:%M:%S')):
+            if temp_data[12*i] != None and temp_data[12*i + 11] != None:
                 epoch_time.append(float(temp_data[12 * i]))
                 time_stamp_utc.append(datetime.strptime(temp_data[12 * i + 1], '%Y:%m:%d:%H:%M:%S'))
                 temp1.append(float(temp_data[12 * i + 2]))
@@ -248,15 +250,24 @@ def gettemp():
                 humi4.append(float(temp_data[12 * i + 9]))
                 pressure.append(float(temp_data[12 * i + 10]))
                 temp.append(float(temp_data[12 * i + 11]))
-                if datetime.strptime(HV_startdate[j-1], '%Y-%m-%d %H:%M:%S') >= datetime.strptime(temp_data[12 * i + 1], '%Y:%m:%d:%H:%M:%S') >= datetime.strptime(HV_enddate[j-1], '%Y-%m-%d %H:%M:%S'):
-                    time_stamp_HV.append(datetime.strptime(temp_data[12 * i + 1], '%Y:%m:%d:%H:%M:%S'))
-                    HV_setting.append(HV_num[j-1]/100 + 12)
-                else:
-                    time_stamp_HV.append(datetime.strptime(temp_data[12 * i + 1], '%Y:%m:%d:%H:%M:%S'))
-                    HV_setting.append(0)
             else:
-                pass
-    #Get data from designated time
+                epoch_time.append(temp_data[12 * i])
+                time_stamp_utc.append(datetime.strptime(temp_data[12 * (i-1) + 1], '%Y:%m:%d:%H:%M:%S'))
+                temp1.append(temp_data[12 * i + 2])
+                temp2.append(temp_data[12 * i + 3])
+                temp3.append(temp_data[12 * i + 4])
+                temp4.append(temp_data[12 * i + 5])
+                humi1.append(temp_data[12 * i + 6])
+                humi2.append(temp_data[12 * i + 7])
+                humi3.append(temp_data[12 * i + 8])
+                humi4.append(temp_data[12 * i + 9])
+                pressure.append(temp_data[12 * i + 10])
+                temp.append(temp_data[12 * i + 11])
+            if temp_data[12 * i + 1] != None and datetime.strptime(HV_startdate[j-1], '%Y-%m-%d %H:%M:%S') >= datetime.strptime(temp_data[12 * i + 1], '%Y:%m:%d:%H:%M:%S') >= datetime.strptime(HV_enddate[j-1], '%Y-%m-%d %H:%M:%S'):
+                HV_setting.append(HV_num[j-1]/100 + 12)
+            else:
+                HV_setting.append(None)
+    # add "None" into parts where you want the data to break
     return epoch_time, time_stamp_utc, temp1, temp2, temp3, temp4, humi1, humi2, humi3, humi4, pressure, temp, time_stamp_HV, HV_setting;
 
 # overall thoughts on this problem: seems to be a more complex problem than graphing two lines of data, should consider what algorithm to use to make a vaild comparsion
@@ -265,13 +276,13 @@ def gettemp():
 
 #def sortdata():
 
+# IMPORTANT all you actaully need to break the annoying lines is add "None" at the end of a part of the data that's gonna break
 
 def runplot():
     sensor_name_list = 'temp2', 'temp3'#, 'temp4'
     plt.figure("x1")
     # create a for loop that plots out all the designated parameters
-    # reverse the order of timestamp and data
-    plt.plot(time_stamp_utc, HV_setting, label="HV Setting (V * 10^-2)")
+    plt.plot(time_stamp_utc, HV_setting, label="HV Setting ((V * 10^-2)+12)")
     for i in range(len(sensor_name_list)):
         if sensor_name_list[i] == 'temp1':
             plt.plot(time_stamp_utc, temp1, label="temp1(\u00b0" + "C)")
@@ -299,6 +310,7 @@ def runplot():
     plt.xlabel('utc time')
     #plt.ylabel("temperature (\u00b0" + "C)")
     plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+    #plt.legend(loc='upper right', borderaxespad=0.)
     plt.grid(True)
     plt.show()
 

@@ -1,5 +1,5 @@
 # DavidStuartLab
-The programs Edgar Mao contributed for projects in Dr. David Stuart's lab.
+The programs Edgar Mao contributed for projects in Dr. David Stuart's undergraduate research group.
 
 **Contents**:
  - [MilliQan_Temperature_Plotting](https://github.com/EdgarMao/DavidStuartLab/tree/master/MilliQan_Temperature_Plotting)

@@ -1,6 +1,8 @@
 # DavidStuartLab
 The programs Edgar Mao contributed for projects in Dr. David Stuart's undergraduate research group.
 
+(This project currently still have some work in progress, the portfolio will be completed by the end of Winter 2021 quarter)
+
 **Contents**:
  - [MilliQan_Temperature_Plotting](https://github.com/EdgarMao/DavidStuartLab/tree/master/MilliQan_Temperature_Plotting)
  - [Accelerometer_Plotting](https://github.com/EdgarMao/DavidStuartLab/tree/master/Accelerometer_Plotting)
